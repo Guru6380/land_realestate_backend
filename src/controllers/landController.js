@@ -73,7 +73,7 @@ export const getLandById = async (req, res) => {
       // Lookup and join with Media collection
       {
         $lookup: {
-          from: "medias",
+          from: "media",
           localField: "_id",
           foreignField: "landId",
           as: "media"

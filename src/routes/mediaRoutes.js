@@ -1,6 +1,6 @@
 import express from "express";
 import upload from "../middleware/uploadMiddleware.js";
-import { uploadMedia } from "../controllers/mediaController.js";
+import { uploadMedia, deleteMedia } from "../controllers/mediaController.js";
 import { protect } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
@@ -12,5 +12,8 @@ router.post(
   upload.array("media", 10),
   uploadMedia
 );
+
+// Delete media by id (admin)
+router.delete("/:id", protect, deleteMedia);
 
 export default router;

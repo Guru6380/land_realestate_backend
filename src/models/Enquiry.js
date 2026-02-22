@@ -26,6 +26,10 @@ const enquirySchema = new mongoose.Schema(
       type: String,
       enum: ["Pending", "Contacted"],
       default: "Pending"
+    },
+    message: {
+      type: String,
+      required: true
     }
   },
   { timestamps: true }
