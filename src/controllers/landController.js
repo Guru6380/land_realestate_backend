@@ -9,7 +9,6 @@ import Media from "../models/Media.js";
 export const createLand = async (req, res) => {
   try {
     const { title, description, location, price, areaSize } = req.body;
-    console.log("Creating land with data:", req.body);
     const land = await Land.create({
       title,
       description,

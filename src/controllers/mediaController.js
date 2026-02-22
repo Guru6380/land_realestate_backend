@@ -4,8 +4,6 @@ import cloudinary from "../../config/cloudinary.js";
 export const uploadMedia = async (req, res) => {
   try {
     const { landId } = req.params;
-    console.log("Received files:", req.files);
-    console.log("Land ID:", landId);
     const land = await Land.findById(landId);
     if (!land) {
       return res.status(404).json({ message: "Land not found" });

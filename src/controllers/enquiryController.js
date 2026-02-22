@@ -9,7 +9,6 @@ import Media from "../models/Media.js";
 export const createEnquiry = async (req, res) => {
   try {
     const { landId, name, email, phone, message } = req.body;
-    console.log(req.body);
     
     if (!landId || !name || !email || !phone || !message) {
       return res.status(400).json({ message: "All fields are required" });
